@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import CustomUserCreationForm
 from .models import Estudiantes
 
-# Create your views here.
+# Create your views here.tu
 
 class VRegistro(View):
 
