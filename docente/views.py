@@ -16,8 +16,9 @@ def docente(request):
         if form.is_valid():
             nombre_usuario=form.cleaned_data.get("username")
             contra=form.cleaned_data.get("password")
-            usuario=authenticate(username=nombre_usuario, password=contra)
-            esadministrador=request.user.is_superuser
+            usuario=authenticate(username=nombre_usuario, password=contra, request=request)
+            
+            esadministrador=request.user.is_staff
             if usuario is not None and esadministrador:
 
                 login(request, usuario)

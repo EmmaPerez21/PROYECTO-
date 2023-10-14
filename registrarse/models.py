@@ -10,7 +10,7 @@ User = get_user_model()
 class Estudiantes (models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
 
-    fisrt_name = models.CharField(max_length=150, null=False, default='nombre')
+    first_name = models.CharField(max_length=150, null=False, default='nombre')
     last_name = models.CharField(max_length=150, null=False, default='Apellidos')
 
     username = models.CharField(max_length=150, null=False, default=user)

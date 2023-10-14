@@ -1,9 +1,8 @@
 def importe_total_asignaciondecursos(request):
     total=0
     if request.user.is_authenticated:
-        pass
-        #for key, value in request.session["asignaciondecursos"].items():
-            #total=total+float(value["precio"])
+        for key, value in request.session["asignaciondecursos"].items():
+            total=total+float(value["precio"])
     
     else:
         total="Debes hacer login"
