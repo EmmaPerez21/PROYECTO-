@@ -1,12 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-from flask import redirect
 from asignaciondecursos.asignaciondecursos import Asignaciondecursos
 from django.contrib import messages
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import send_mail
-
+from .models import Asignacion
 from asignacion.models import LineaAsignacion, Asignacion
 
 # Create your views here.
@@ -56,6 +55,6 @@ def enviar_mail(**kwargs):
     #to=kwargs.get("email_usuario")
     to="emalez20@gmail.com"
 
-    send_mail(asunto,mensaje_texto,from_email,[to],html_message=mensaje)
+    send_mail(asunto,mensaje_texto,from_email,[to], html_message=mensaje)
 
 

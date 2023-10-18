@@ -4,7 +4,7 @@ from .import views
 
 urlpatterns = [
     
-    path('',views.procesar_asignacion, name="procesar_asignacion"),
+    path('',views.procesar_asignacion, name="procesar_asignacion")
 
 
     

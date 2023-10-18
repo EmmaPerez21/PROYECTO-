@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 
 from django.contrib.auth import get_user_model
@@ -15,21 +16,23 @@ class Asignacion(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.id
-    
+
     @property
     def total(self):
         return self.lineaasignacion_set.aggregate(
 
             total=Sum(F("precio")*F("cantidad"), output_field=FloatField())
 
-        )["total"]
+        )["total"] or FloatField(0)
+    
+
+    def __str__(self):
+        return self.id
 
     class Meta:
-        db_table='asignacion'
+        db_table='asignaciones'
         verbose_name='asignacion'
-        verbose_name_plural='asignacion'
+        verbose_name_plural='asignaciones'
         ordering=['id']
 
 class LineaAsignacion(models.Model):
@@ -45,7 +48,7 @@ class LineaAsignacion(models.Model):
     
 
     class Meta:
-        db_table='lineaasignacion'
+        db_table='lineaasignaciones'
         verbose_name='Linea asignacion'
         verbose_name_plural='Lineas asignaciones'
         ordering=['id']

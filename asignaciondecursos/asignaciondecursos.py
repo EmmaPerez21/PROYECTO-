@@ -22,7 +22,7 @@ class Asignaciondecursos:
         #else:
             #for key,value in self.asignaciondecursos.items():
                 #if key==str(curso.id):
-                     #value["asignacion"]=value["asignacion"]+1
+                     #value["cantidad"]=value["cantidad"]+1
                      #value["precio"]=float(value["precio"])+curso.precio
                      #break
 
@@ -32,7 +32,7 @@ class Asignaciondecursos:
         self.session["asignaciondecursos"]=self.asignaciondecursos
         self.session.modified=True
 
-    def eliminar(self, curso):
+    def eliminar(self,curso):
         curso.id=str(curso.id) 
         if curso.id in self.asignaciondecursos:
             del self.asignaciondecursos[curso.id]
@@ -43,7 +43,6 @@ class Asignaciondecursos:
                 if key==str(curso.id):
                     value["precio"]=float(value["precio"])-curso.precio
                     value["cantidad"]=value["cantidad"]-1
-                
                     #value["precio"]=float(value["precio"])+curso.precio
                     if value["cantidad"]<1:
                         self.eliminar(curso)
