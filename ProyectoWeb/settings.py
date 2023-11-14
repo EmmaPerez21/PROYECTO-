@@ -113,10 +113,10 @@ WSGI_APPLICATION = 'ProyectoWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '32113701',
-        'HOST': 'proyectoweb.czqpyxvwaidi.us-east-2.rds.amazonaws.com',
+        'NAME': 'nombre de tu base de datos',
+        'USER': 'nombre de tu usuario en postgres',
+        'PASSWORD': 'contraseña de postgres',
+        'HOST': '127.0.0.1:8000',
         'PORT': '5432',
     }
 }
@@ -169,8 +169,8 @@ EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST="smtp.gmail.com"
 EMAIL_USE_TLS=True
 EMAIL_PORT=587
-EMAIL_HOST_USER="emalez20@gmail.com"
-EMAIL_HOST_PASSWORD="awbz wyfx szqv fdxs"
+EMAIL_HOST_USER="tu correo"
+EMAIL_HOST_PASSWORD="contraseña de terceros de tu correo"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

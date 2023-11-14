@@ -51,7 +51,7 @@ def enviar_mail(**kwargs):
     })
 
     mensaje_texto=strip_tags(mensaje)
-    from_email="emalez20@gmail.com"
+    from_email="tu correo"
     to=kwargs.get("email_usuario")
     #to="emalez20@gmail.com"
 
