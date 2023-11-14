@@ -36,7 +36,7 @@ def procesar_asignacion(request):
 
     messages.success(request, "Su asignacion a sido exitosa")
 
-    return redirect(".../estudiante")
+    return redirect("/estudiante")
     
     
 
@@ -52,8 +52,8 @@ def enviar_mail(**kwargs):
 
     mensaje_texto=strip_tags(mensaje)
     from_email="emalez20@gmail.com"
-    #to=kwargs.get("email_usuario")
-    to="emalez20@gmail.com"
+    to=kwargs.get("email_usuario")
+    #to="emalez20@gmail.com"
 
     send_mail(asunto,mensaje_texto,from_email,[to], html_message=mensaje)
 

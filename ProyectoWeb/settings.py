@@ -113,10 +113,10 @@ WSGI_APPLICATION = 'ProyectoWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'proyecto',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '32113701',
-        'HOST': '127.0.0.1',
+        'HOST': 'proyectoweb.czqpyxvwaidi.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
